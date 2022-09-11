@@ -13,12 +13,14 @@ using System.Net;
 using System.Net.Sockets;
 using System.Windows.Forms;
 using SMBLibrary;
+using SMBLibrary.Adapters;
 using SMBLibrary.Authentication.GSSAPI;
 using SMBLibrary.Authentication.NTLM;
 using SMBLibrary.Server;
 using SMBLibrary.Win32;
 using SMBLibrary.Win32.Security;
 using Utilities;
+using CustomFileSystem;
 
 namespace SMBServer
 {
@@ -176,7 +178,12 @@ namespace SMBServer
             string sharePath = shareSettings.SharePath;
             List<string> readAccess = shareSettings.ReadAccess;
             List<string> writeAccess = shareSettings.WriteAccess;
-            FileSystemShare share = new FileSystemShare(shareName, new NTDirectoryFileSystem(sharePath));
+
+
+            //FileSystemShare share = new FileSystemShare(shareName, new NTDirectoryFileSystem(sharePath));
+
+            FileSystemShare share = new FileSystemShare(shareName, new NTFileSystemAdapter(new CustomFileSystem.CustomFS(sharePath)));
+
             share.AccessRequested += delegate(object sender, AccessRequestArgs args)
             {
                 bool hasReadAccess = Contains(readAccess, "Users") || Contains(readAccess, args.UserName);

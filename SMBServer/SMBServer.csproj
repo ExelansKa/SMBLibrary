@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>net20;net40;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net6.0-windows</TargetFrameworks>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyName>SMBServer</AssemblyName>
     <RootNamespace>SMBServer</RootNamespace>
@@ -14,6 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CustomFileSystem\CustomFileSystem.csproj" />
+    <ProjectReference Include="..\SMBLibrary.Adapters\SMBLibrary.Adapters.csproj" />
     <ProjectReference Include="..\SMBLibrary.Win32\SMBLibrary.Win32.csproj" />
     <ProjectReference Include="..\SMBLibrary\SMBLibrary.csproj" />
   </ItemGroup>

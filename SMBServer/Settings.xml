@@ -5,6 +5,22 @@
       <ReadAccess Accounts="*"></ReadAccess>
       <WriteAccess Accounts="Admin,Test"></WriteAccess>
     </Share>
+    <Share Name="Shared_00" Path="C:\Shared_00">
+      <ReadAccess Accounts="*"></ReadAccess>
+      <WriteAccess Accounts="Admin,Test"></WriteAccess>
+    </Share>
+    <Share Name="Shared_01" Path="C:\Shared_01">
+      <ReadAccess Accounts="*"></ReadAccess>
+      <WriteAccess Accounts="Admin,Test"></WriteAccess>
+    </Share>
+    <Share Name="Shared_02" Path="C:\Shared_02">
+      <ReadAccess Accounts="*"></ReadAccess>
+      <WriteAccess Accounts="Admin,Test"></WriteAccess>
+    </Share>
+    <Share Name="Shared_03" Path="C:\Shared_03">
+      <ReadAccess Accounts="*"></ReadAccess>
+      <WriteAccess Accounts="Admin,Test"></WriteAccess>
+    </Share>
   </Shares>
   <Users>
     <User AccountName="Admin" Password="admin"></User>
